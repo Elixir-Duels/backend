@@ -9,8 +9,9 @@ defmodule DuelsWeb.ChatChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  def handle_in("new_msg", %{"body" => body}, socket) do
-    broadcast!(socket, "new_msg", %{body: body})
+  def handle_in("new_msg", %{"content" => content}, socket) do
+    id = Ecto.UUID.generate()
+    broadcast!(socket, "new_msg", %{id: id, content: content, author: socket.assigns.user_id})
     {:noreply, socket}
   end
 end

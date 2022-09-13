@@ -14,8 +14,7 @@ config :duels, Duels.Repo,
 # debugging and code reloading.
 #
 # The watchers configuration can be used to run external
-# watchers to your application. For example, we use it
-# with esbuild to bundle .js and .css sources.
+# watchers to your application.
 config :duels, DuelsWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
@@ -24,10 +23,7 @@ config :duels, DuelsWeb.Endpoint,
   code_reloader: true,
   debug_errors: true,
   secret_key_base: "XdcjCBa2dfnDwMY2hw8MhMvcLEgAQRmanlc/U9U1pow6aOw7+19jZlDxLgfvS7VY",
-  watchers: [
-    # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
-  ]
+  watchers: []
 
 # ## SSL Support
 #
