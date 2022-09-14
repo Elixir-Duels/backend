@@ -1,10 +1,6 @@
 defmodule DuelsWeb.Router do
   use DuelsWeb, :router
 
-  pipeline :auth do
-    plug DuelsWeb.Auth.Pipeline
-  end
-
   pipeline :api do
     plug :accepts, ["json"]
   end
