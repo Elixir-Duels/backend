@@ -31,13 +31,4 @@ defmodule Duels.Accounts.User do
           changeset
     end
   end
-
-  def get_by_username(username) do
-    case Repo.get_by(User, username: username) do
-      nil ->
-        {:error, :not_found}
-      user ->
-        {:ok, user}
-    end
-  end
 end

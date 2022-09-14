@@ -8,6 +8,15 @@ defmodule Duels.Accounts do
 
   alias Duels.Accounts.User
 
+  def get_by_username(username) do
+    case Repo.get_by(User, username: username) do
+      nil ->
+        {:error, :not_found}
+      user ->
+        {:ok, user}
+    end
+  end
+
   @doc """
   Returns the list of users.
 
