@@ -29,7 +29,11 @@ defmodule DuelsWeb.FallbackController do
   end
 
   def call(conn, e) do
-    IO.puts e
+    try do
+      IO.puts(e)
+    rescue _ ->
+      IO.puts("can't print error")
+    end
     conn
     |> put_status(:internal_server_error)
     |> put_view(DuelsWeb.ErrorView)
