@@ -26,6 +26,7 @@ defmodule DuelsWeb.UserController do
   defp user_info(conn, user) do
     with token <- Phoenix.Token.sign(conn, "user auth", user.id) do
       conn
+      |> put_secure_browser_headers()
       |> put_status(:created)
       |> render("user.json", %{user: user, token: token})
     end

@@ -5,7 +5,7 @@ defmodule DuelsWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", DuelsWeb do
+  scope "/", DuelsWeb do
     pipe_through :api
     post "/users/signup", UserController, :create
     post "/users/signin", UserController, :signin
