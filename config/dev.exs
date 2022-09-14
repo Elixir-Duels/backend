@@ -10,6 +10,10 @@ config :duels, Duels.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+config :duels, DuelsWeb.Auth.Guardian,
+  issuer: "duels",
+  secret_key: "bez+6lvagOPUKcUEMLob6UBBXJNO8hRBtBQBw3/Iy9/FNRirA1FcEqB3ox4EDy4a"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

@@ -13,6 +13,10 @@ config :duels, Duels.Repo,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
+config :duels, DuelsWeb.Auth.Guardian,
+  issuer: "duels",
+  secret_key: "yaGWJhvjk7Cenet5usTTalcJxAhGaQzbZVFp3g51KtSZ32EG0WBsIoCM8OriB9Vv"
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :duels, DuelsWeb.Endpoint,
