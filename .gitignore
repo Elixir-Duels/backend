@@ -33,4 +33,4 @@ npm-debug.log
 /assets/node_modules/
 
 # Elixir Language Server files
-# .elixir_ls/
+.elixir_ls/
