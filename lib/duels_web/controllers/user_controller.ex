@@ -34,7 +34,6 @@ defmodule DuelsWeb.UserController do
   end
 
   defp me_internal(conn, token) do
-    IO.puts(token)
     with {:ok, id} <- Phoenix.Token.verify(conn, "user auth", token),
       %User{} = user <- Duels.Repo.get(User, id) do
       conn
